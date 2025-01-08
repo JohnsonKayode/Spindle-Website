@@ -10,6 +10,100 @@
   font-family: 'Roboto', 'Inter', sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  width: 100%;
+  height: fit-content;
+}
+
+body{
+  overflow-x: hidden; 
+}
+
+@media only screen and (max-width: 600px){
+
+  .menu-item {
+    grid-template-rows: repeat(auto-fit, minmax(50px, 1fr)) !important;
+    justify-content:center;
+    /* background-color: red; */
+  }
+
+  .first-section {
+    grid-template-rows: repeat(2, 1fr) !important;
+    justify-items: center;
+    padding: 1%;
+    height: 100vh;
+    /* background-color: red; */
+  }
+  
+  .first-section-text {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    /* flex-direction: column; */
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin: 1%;
+  }
+  
+  .image {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image img {
+    max-width: 100%;
+    height: auto;
+    /* background-color: green; */
+  }
+  
+  #iny7r5 {
+    color: var(--orange);
+    font-family: "Brush Script MT", sans-serif;
+    font-size: 5rem;
+    color: var(--yellow);
+  }
+  
+  .first-section-text h1 {
+    font-size: clamp(1rem, 4vw, 2rem);
+    /* background-color: red; */
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .lead-title-text {
+    font-family: 'Inter', sans-serif;
+/* This CSS rule sets the font size using the clamp() function, ensuring that the font size is responsive.It will be a minimum of 0.6rem, a maximum of 2rem, and will scale with the viewport width (3vw)to provide a fluid typography experience. */
+    font-size: clamp(0.6rem, 3vw, 2rem);
+    font-weight: light;
+    letter-spacing: -1px;
+    color: white;
+    margin-top: -8%;
+  }
+  
+  .lead-btn {
+    margin-top: -8%;
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 2rem;
+    background-color: var(--yellow);
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    text-decoration: none;
+    color: black;
+    width: fit-content;
+  }
+  
+  .lead-btn:hover {
+    background-color: white;
+    color: var(--black);
+  }
+  
+  .lead-btn:active {
+    background-color: #4d114f;
+    color: #fff;
+  }
+  
+  
 }
 
 .header-banner {
@@ -17,7 +111,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  justify-items: center;
   color: white;
+  /* background-color: red; */
   background: linear-gradient(90deg, var(--darkblue) 0%, var(--midblue) 48% 100%);
   padding: 1%;
   width: auto;
@@ -32,22 +128,24 @@
   /* background-color: red; */
   width: 100%;
   padding: 1%;
+  /* justify-items: center; */
 }
 
 #logo {
   display: flex;
   font-family: 'Brush Script MT', serif;
-  font-size: 2rem;
+  font-size: 2em;
   /* background-color: purple; */
-  margin-left: 3%;
-  justify-content: start;
+  /* margin-left: -55%; */
+  justify-content: center;
   color: var(--yellow);
   /* align-items: center; */
 }
 
 .menu-item {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 20%);
+  justify-content: end;
   /* background-color: green; */
 }
 
@@ -62,9 +160,10 @@
 
 .first-section {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 40%);
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  justify-items: center;
   padding: 1%;
   /* background-color: red; */
 }
@@ -83,8 +182,9 @@
   align-items: center;
 }
 
-img {
-  width: 80%;
+.image img {
+  width: 100%;
+  /* background-color: green; */
 }
 
 #iny7r5 {
@@ -95,7 +195,7 @@ img {
 }
 
 .first-section-text h1 {
-  font-size: 5rem;
+  font-size: 1rem;
   font-weight: bold;
   color: white;
   /* background-color: red; */
@@ -107,9 +207,9 @@ img {
   font-family: 'Inter', sans-serif;
   font-size: 2rem;
   font-weight: light;
-  letter-spacing: -1px;
+  /* letter-spacing: -1px; */
   color: white;
-  margin-top: -8%;
+  /* margin-top: -8%; */
 }
 
 .lead-btn {
@@ -167,7 +267,8 @@ img {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 25%);
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-columns: 1fr;
   justify-content: center;
   align-items: center;
   padding: 2%;
@@ -226,10 +327,12 @@ img {
 
 .third-section{
   display: grid;
-  grid-template-columns: repeat(2, 40%);
-  align-items: center;
-  justify-content: center;
+  grid-template-columns: repeat(2, 30%);
+  gap: 20px;
+  align-items: center;;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   margin: 1%;
 }
 
@@ -239,8 +342,9 @@ img {
   border-radius: 10px;
   align-items: center;
   justify-content: center;
+  justify-items: center;
   text-align: center;
-  width: auto;
+  padding: 2%;
 }
 
 .third-section-title{
@@ -249,10 +353,16 @@ img {
   font-size: 1.5rem;
   color: var(--yellow);
   background-color: var(--darkblue);
-  width: 100%;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 2% 5%;
+  border-radius: 10px;
+}
+
+.third-section-desc{
+  font-size: 1.2rem;
+  color: var(--darkblue);
   padding: 2%;
 }
 
@@ -262,11 +372,12 @@ img {
   background-color: var(--orange);
   padding: 10px;
   font-size: 20px;
-  width: fit-content;
+  text-align: center;
   align-items: center;
   justify-content: center;
-  justify-items: center;
   border-radius: 5px;
+  width: fit-content;
+  justify-items: center;
 }
 
 .third-section-text a:hover{
@@ -275,128 +386,61 @@ img {
   transition: all 0.5s ease; 
 }
 
-/*
-.footer-under {
-  background-color: #312833;
-  padding-bottom: 100px;
-  padding-top: 100px;
-  min-height: 500px;
-  color: #eee;
-  position: relative;
-  font-weight: 100;
-  font-family: Helvetica, serif;
-}
-
-.copyright {
-  background-color: rgba(0, 0, 0, 0.15);
-  color: rgba(238, 238, 238, 0.5);
-  bottom: 0;
-  padding: 1em 0;
-  position: absolute;
-  width: 100%;
-  font-size: 0.75em;
-}
-
-.made-with {
-  float: left;
-  width: 50%;
-  padding: 5px 0;
-}
-
-.foot-social-btns {
-  display: none;
-  float: right;
-  width: 50%;
-  text-align: right;
-  padding: 5px 0;
+.footer-section{
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: fit-content;
+  padding: 1%;
+  /* justify-content: center; */
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  background-color: green;
 }
 
 
+.footersection{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  /* background-color: black; */
+  width: 70%;
+} 
 
-#i2twr9 {
-  font-size: 22.4px;
+.foot-social-btns ul{
+  padding: 1%;
+} 
+
+.foot-social-btns ul li{
+  list-style: none;
+  padding: 2%;
 }
 
-#ip7x09 {
-  font-size: 13.6px;
+ .foot-social-btns ul li a{
+  list-style: none;
+  padding: 5%;
+  color: white;
+  text-decoration: none;
 }
 
-#i8ccwi {
-  color: black;
-  height: 100%;
-  left: 25%;
-  position: relative;
+ .footer-section a{
+  color: white;
+  text-align: center;
+  text-decoration: none;
 }
 
-#i41lnf {
-  color: black;
-  position: relative;
-  height: 100%;
-  left: 25%;
-}
-
-#izp60b {
-  color: black;
-  position: relative;
-  height: 90%;
-  left: 25%;
-  top: 10%;
-}
-
-#itnnvx {
-  min-height: 50px;
-  padding: 40px 0 100px 0;
-}
-
-#ikt8q4 {
-  font-family: Helvetica, sans-serif;
-  margin: 0 0 10px 0;
-}
-
-#ih0kvj {
-  display: inline-block;
-  font-family: Helvetica, sans-serif;
-  font-weight: 900;
-  color: #27284e;
-  width: 100%;
+ .footer-section #i1lnlk{
+  /* width: 80%; */
   text-align: center;
 }
 
-#i441e2 {
-  color: #27284e;
-  font-weight: 900;
+.footer-section #i1lnlk p{
+  padding: 1%;
   text-align: center;
-  width: 100%;
-  font-family: Helvetica, sans-serif;
-  position: relative;
-  display: inline-block;
+  /* background-color: red ; */
+  line-height: 2rem;
 }
-
-#i4itql {
-  color: #eeeeee;
-}
-
-#i1lnlk {
-  padding: 10px;
-  color: #eeeeee;
-}
-
-#ip4bap {
-  float: right;
-  font-family: Helvetica, sans-serif;
-  color: #eeeeee;
-  text-align: center;
-  padding: 10px 0 0 0;
-}
-
-#i5tma6 {
-  color: #90cbff;
-} */
-
-/* #ivnc7l {
-  color: #90cbff;
-} */
-
-/* #i6u29j {
-  color: #90cbff;
-} */
